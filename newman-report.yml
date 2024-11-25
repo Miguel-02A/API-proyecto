@@ -1,0 +1,29 @@
+name: Execute Newman API Test and Notify to Teams
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-newman:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: |
+          npm install -g axios node-cron newman
+
+      - name: Run Newman command
+        run: |
+          # Ejecuta el script de Node.js que hace el trabajo
+          node index.js

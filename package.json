@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@azure/identity": "^4.5.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "axios": "^1.7.7",
+    "node-cron": "^3.0.3"
+  }
+}
